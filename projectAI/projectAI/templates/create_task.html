@@ -1,0 +1,40 @@
+<!-- create_task.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Task</title>
+</head>
+<body>
+    {% extends "base.html" %}
+    {% block content %}
+    {%include 'navbar.html' %}
+<div class="container"style="margin-top: 80px;">
+    <h2>Create a New Task</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="row">
+        <div class="col-sm-6">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" maxlength="50" class="form-control"required>
+        <label for="description">Description:</label>
+        <input type="text" id="description" name="description" class="form-control"maxlength="200" required>
+        </div>
+
+        <div class="col-sm-6" style="margin-bottom: 10px">
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate" name="startDate" class="form-control"required>
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate" name="endDate" class="form-control"required>
+       </div>
+       <label id="employees-select">Select an employee :</label>
+        <select id="employees-select" name='select' class="form-control" multiple>
+            {% for employee  in employees %}
+            <option value="{{ employee.id }}">{{ employee.FirstName }}</option>
+          {% endfor %}
+        </select>
+        <button style="margin-top: 20px; width:200px;"type="submit" class="btn btn-primary">Create Task</button>
+        </div>
+    </form>
+    {% endblock %}
+</body>
+</html>

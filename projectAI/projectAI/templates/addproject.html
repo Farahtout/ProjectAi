@@ -1,0 +1,39 @@
+<!-- myapp/templates/add_project.html -->
+
+{% extends "base.html" %}
+{% block content %}
+{%include 'navbar.html' %}
+<div class="container"style="margin-top: 80px;">
+  <h2 >Add Project</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-sm-6">
+      <label for="id_name">Project Name:</label>
+      <input type="text" id="id_name" name="name" class="form-control" required>
+      <label for="id_description">Project Description:</label>
+      <input type="text" id="id_description" name="description" class="form-control"  required>
+      <label for="id_type">Type(ai or other)</label>
+      <select id="id_type" class="form-control" aria-label="Default select example" name="type">           
+        <option value="ai">AI</option>
+        <option value="other">other</option>
+      </select>     <br>
+     </div>
+
+    <div class="col-sm-6" style="margin-bottom: 10px">
+      <label for="id_startDate">Start Date:</label>
+      <input type="date" id="id_startDate" name="startDate" class="form-control" required>
+      <label for="id_endDate">End Date:</label>
+      <input type="date" id="id_endDate" name="endDate" class="form-control" required>
+      <label for="cost">Cost:</label>
+      <input type="text" id="cost" name="cost" class="form-control" required>
+    
+    
+  </div>
+    <button type="submit" class="btn btn-primary" style="width: 300px; ">Save Project</button>
+
+  </div>
+  </div>
+
+  </form>
+{% endblock %}

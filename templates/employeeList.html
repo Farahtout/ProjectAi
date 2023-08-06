@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+  <style>
+    .border-div{
+      border: 1px solid black;
+      background-color : #add8e6;
+      margin-left:8px;
+      margin-bottom: 8px;
+      padding:15px;
+    }
+    .bold{
+        font-weight: bold;
+    }
+  </style>
+  </head>
+  <body>
+    {% extends "base.html" %}
+    {% block content %}
+    {% include 'navbar.html' %}
+
+ 
+
+    <div class="container">
+      <div class="row" style="margin-top: 50px;">
+        <div class="col-6">
+          <h2><a style="text-decoration: none;color: black; " href="/">Employees</a></h2>
+        </div>
+       
+       
+      </div>
+      <a href="/addemployee/" class="btn btn-primary btn-sm text-nowrap">Add Employee</a>
+      <div class="row" style="margin-top: 15px;">
+        {% for employee in employees %}
+        <div class="col-sm-4 border-div" onclick="projectClick('{{ employee.id }}')" style="cursor: pointer;">
+          <span class="bold">{{ employee.FirstName }}</span>
+          <span class="bold">{{ employee.LastName }}</span>
+          <div class="row">
+            <div class="col-12"> 
+              <span style="word-wrap: break-word;">{{ employee.email }}</span>
+            </div>
+          
+          </div>
+          <div class="row">
+            <span>{{ employee.address }}</span>
+          </div>
+        </div>
+          {% endfor %}
+      </div>
+    </div>
+    <script>
+        function projectClick(employee_id) {
+            
+            
+            window.location.href =`/employeeview/${employee_id}/`;
+        }
+      </script>
+    {% endblock %}
+
+  </body>
+</html>

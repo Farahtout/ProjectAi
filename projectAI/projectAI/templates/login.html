@@ -1,0 +1,26 @@
+<body >
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container" >
+    <br> <h2 style="color:rgb(13, 18, 114)">LOGIN page</h2><br><br>
+  <form method="post">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-6"></div>
+                        <label for="username">USERNAME:</label>
+                        <input type="text" id="username" name="username" class="form-control" style="width: 300px;" required>
+                        <label for="password">PASSWORD:</label><br>
+                        <input type="password" id="password"class="form-control" name="password" style="width: 300px;" required>
+                        </div>
+
+                        <button type="submit"  style="width: 200px; margin-top: 30px;"class="btn btn-primary">Submit</button><br>
+                        <p><a href="/">back home</a></p>
+                   
+                </form>
+            </div>
+
+
+    {% endblock %}
+
+</body>

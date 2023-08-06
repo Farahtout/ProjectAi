@@ -1,0 +1,44 @@
+<!-- myapp/templates/add_employee.html -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Add Employee</h2>
+  <form method="post">
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-sm-6">
+       
+        <label for="id_FirstName">First Name:</label>
+       <input type="text" id="id_FirstName" name="FirstName" class="form-control" required>
+       <label for="id_LastName">Last Name:</label>
+       <input type="text" id="id_LastName" name="LastName" class="form-control" required>
+       <label for="id_email">Email:</label>
+      <input type="email" id="id_email" name="email" class="form-control" required>
+       <label id="gender">Gender:</label>
+       <select class="form-select" id="gender" aria-label="Default select example" name="gender">
+        <option value="m">Male</option>
+        <option value="f">Female</option>
+      </select>
+       
+      </div>
+      <div class="col-sm-6">
+       <label for="certif">certification:</label>
+        <input type="text" id="certif" name="certification" class="form-control" required>
+      <label for="id_address">Address:</label>
+      <input type="text" id="id_address" name="address" class="form-control" required>
+      <label for="position">position:</label>
+     <select id="position" class="form-control" aria-label="Default select example" name="position">           
+              <option value="ai">AI</option>
+              <option value="software">Software</option>
+    </select>
+    <label for="id_birthdate">Birthday:</label>
+     <input type="date" id="id_birthdate" name="birthday" class="form-control" required>
+     </div>
+     <button style="margin-top:10px; width:200px" type="submit" class="btn btn-primary">Save Employee</button>
+
+     </div>
+
+
+  </form>
+{% endblock %}

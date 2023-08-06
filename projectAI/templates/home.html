@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+.fa-anchor,.fa-coffee {font-size:200px}
+.left{
+    margin-right:2px;
+}
+</style>
+</head>
+<body>
+
+{% include 'navbar.html' %}
+
+
+<header class="w3-container  w3-center" style="padding:90px 16px">
+  <h1 class="w3-margin w3-jumbo">PROJECT-AI</h1>
+  <p class="w3-xlarge">Streamline Your AI Projects with Our Powerful Management Tool.</p>
+</header>
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-twothird">
+      <h1>About us:</h1>
+      <h5 class="w3-padding-32">Welcome to Project-AI, a leading provider of AI solutions and services. At Project-AI, we are passionate about harnessing the power of artificial intelligence to drive innovation, solve complex challenges, and create a better future.</h5>
+
+      <p class="w3-text-grey">Our mission is to empower businesses and organizations with cutting-edge AI technologies, helping them unlock new possibilities and achieve their goals. We strive to be at the forefront of AI advancements, constantly seeking ways to push the boundaries of what's possible.</p>
+    </div>
+
+    <div class="w3-third w3-center">
+      <img class='w3-margin-right' src="{% static 'img/home1.png' %}" width="400px;">
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+    <div class="w3-content">
+      <div class="w3-twothird">
+        <h1>Contact Us:</h1>
+        <h5 class="w3-padding-32">Ready to embark on an AI-powered journey with us? Get in touch today to explore how Project-AI can empower your organization with transformative AI solutions. We look forward to partnering with you on your path to success.</h5>
+        <p class="w3-text-grey">Thank you for your interest in Poroject-AI. We are excited to hear from you and discuss how we can assist you in harnessing the power of artificial intelligence for your business. Please feel free to reach out to us through any of the following contact methods:</p>
+      </div>
+  
+      <div class="w3-third w3-center ">
+        <img  src="{% static 'img/home2.jpg' %}" w3-margin-right w3-padding-64 width="400px" > <br>
+        -Email: farahhtout15@gmail.com<br>
+        -Phone: 81-320-278
+    </div>
+    </div>
+  </div>
+  
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">
+        "Every successful AI project begins with a spark of curiosity, fueled by dedication, and ignited by relentless innovation."
+
+        </h1>
+</div>
+
+
+
+
+
+</body>
+</html>

@@ -12,12 +12,12 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import dj_database_url
-import environ
+# import environ
 import os
 
 
-env = environ.Env()
-environ.Env.read_env()
+# env = environ.Env()
+# environ.Env.read_env()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -95,7 +95,7 @@ WSGI_APPLICATION = 'projectAI.wsgi.application'
 # }
 DATABASES={
     'default':
-        dj_database_url.parse(env('DATABASE_URL'))
+        dj_database_url.parse('postgres://projectai_user:S5QgSK3QLGjOnDeuJVrYIJKjmejIQSCi@dpg-cj7rlks5kgrc73bptaig-a.oregon-postgres.render.com/projectai')
 }
 
 
